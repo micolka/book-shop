@@ -1,0 +1,49 @@
+.description {
+    text-align: justify;
+}
+
+.book-container {
+    padding: 3px;
+    border: cadetblue solid 1px;
+    margin-bottom: 3px;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.book_info-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .book_info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 5%;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: #c84343;
+    color: #fff;
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.bnt_unavailable {
+    pointer-events: none;
+    background: #9b9292;
+}
