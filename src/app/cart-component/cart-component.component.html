@@ -1,0 +1,12 @@
+<div class="cart-container">
+    <h1>Cart</h1>
+    <div class="book_container" *ngFor="let book of cartItems">
+        <h2>{{ book.name }}</h2>
+        <div>
+            <button (click)="removeBook(book.id)">-</button>
+            <span>{{ book.count }}</span>
+            <button (click)="addBook(book.id)">+</button>
+        </div>
+        <button (click)="deleteBook(book.id)">Delete</button>
+    </div>
+</div>
