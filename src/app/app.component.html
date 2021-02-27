@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>{{ title }}</h1>
+    <h1 #appTitle>{{ title }}</h1>
     <hr />
     <div *ngFor="let book of bookList">
         <app-book-component [book]="book" (isBookAdded)="addBookToCart($event)"> </app-book-component>

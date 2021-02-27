@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, DoCheck } from '@angular/core';
 import { bookList } from './books';
 
 export interface Cart {
@@ -12,11 +12,22 @@ export interface Cart {
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
     title = 'bookShop';
+    @ViewChild('appTitle', { static: false })
+    headerTitle!: ElementRef;
+
     bookList = bookList;
 
     cartItems: Cart[] = [];
+
+    ngDoCheck(): void {
+        this.changeTitle();
+    }
+
+    changeTitle(): void {
+        this.title = !this.cartItems.length ? 'bookShop' : 'bookShop - check your cart';
+    }
 
     addBookToCart(id: number): void {
         const cartIndex = this.cartItems.findIndex((book) => book.id === id);
