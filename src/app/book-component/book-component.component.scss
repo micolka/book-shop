@@ -1,0 +1,28 @@
+.description {
+    text-align: justify;
+}
+
+.book-container {
+    padding: 3px;
+    border: cadetblue solid 1px;
+    margin-bottom: 3px;
+}
+
+.book_info-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .book_info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 5%;
+    }
+}
+
+.bnt_unavailable {
+    pointer-events: none;
+    background: #9b9292;
+}

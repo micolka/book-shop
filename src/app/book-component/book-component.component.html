@@ -1,0 +1,12 @@
+<div class="book-container">
+    <h2>{{ book.name }}</h2><span>by {{book.author}}</span>
+    <p class="description">{{ book.description }}</p>
+    <div class="book_info-container">
+        <div class="book_info">
+            <span>Price: {{ book.price }} $</span>
+            <span>Category: {{ book.category }}</span>
+            <span>Date of creation: {{ book.createDate }}</span>
+        </div>
+        <button [ngClass]="{ bnt_unavailable: !book.isAvailable }" class="btn" (click)="addBookToCart()">Buy</button>
+    </div>
+</div>
