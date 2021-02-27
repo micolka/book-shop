@@ -7,8 +7,6 @@
             <span>Category: {{ book.category }}</span>
             <span>Date of creation: {{ book.createDate }}</span>
         </div>
-        <button [ngClass]="{ bnt_unavailable: !book.isAvailable }" class="btn" (click)="addBookToCart(book.name)">
-            Buy
-        </button>
+        <button [ngClass]="{ bnt_unavailable: !book.isAvailable }" class="btn" (click)="addBookToCart()">Buy</button>
     </div>
 </div>

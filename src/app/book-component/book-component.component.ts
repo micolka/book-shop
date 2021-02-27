@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { BookModel } from '../books';
 
 @Component({
@@ -11,7 +11,8 @@ export class BookComponentComponent {
     book!: BookModel;
     constructor() {}
 
-    addBookToCart(name: string): void {
-        console.log(`Book ${name} added to cart`);
+    @Output() isBookAdded = new EventEmitter<number>();
+    addBookToCart(): void {
+        this.isBookAdded.emit(this.book.id);
     }
 }

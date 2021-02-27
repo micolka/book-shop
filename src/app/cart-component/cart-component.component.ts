@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-interface Cart {
-    id: number;
-    name: string;
-    count: number;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { Cart } from '../app.component';
 
 @Component({
     selector: 'app-cart-component',
@@ -12,11 +7,8 @@ interface Cart {
     styleUrls: ['./cart-component.component.scss'],
 })
 export class CartComponentComponent {
-    cartItems: Cart[] = [
-        { id: 1, name: 'Last Man Standing', count: 1 },
-        { id: 2, name: 'The Kite Runner', count: 3 },
-    ];
-
+    @Input()
+    cartItems!: Cart[];
     constructor() {}
 
     addBook(id: number): void {
@@ -31,7 +23,8 @@ export class CartComponentComponent {
         }
     }
 
-    deleteBook(id: number): void {
-        this.cartItems = this.cartItems.filter((el) => el.id !== id);
+    deletePosition(id: number): void {
+        const index = this.cartItems.findIndex((el) => el.id === id);
+        this.cartItems.splice(index, 1);
     }
 }
