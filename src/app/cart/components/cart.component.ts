@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cart } from '../app.component';
+import { Cart } from '../../app.component';
 
 @Component({
     selector: 'app-cart-component',
-    templateUrl: './cart-component.component.html',
-    styleUrls: ['./cart-component.component.scss'],
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.scss'],
 })
-export class CartComponentComponent {
+export class CartComponent {
     @Input()
     cartItems!: Cart[];
     constructor() {}

@@ -1,12 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { BookModel } from '../books';
+import { BookModel } from '../../books';
 
 @Component({
     selector: 'app-book-component',
-    templateUrl: './book-component.component.html',
-    styleUrls: ['./book-component.component.scss'],
+    templateUrl: './book.component.html',
+    styleUrls: ['./book.component.scss'],
 })
-export class BookComponentComponent {
+export class BookComponent {
     @Input()
     book!: BookModel;
     constructor() {}
